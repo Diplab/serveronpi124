@@ -8,8 +8,10 @@ import javax.xml.ws.Endpoint;
 
 import com.diplab.service.ACService;
 import com.diplab.service.CO2Service;
+import com.diplab.service.TemperatureService;
 import com.diplab.serviceImp.ACServiceImpl;
 import com.diplab.serviceImp.CO2ServiceImpl;
+import com.diplab.serviceImp.TemperatureServiceImpl;
 
 @WebService
 @SOAPBinding(style = Style.RPC)
@@ -17,6 +19,7 @@ public class Device124 {
 
 	CO2Service co2Service = new CO2ServiceImpl();
 	ACService acService = new ACServiceImpl();
+	TemperatureService temperatureService = new TemperatureServiceImpl();
 
 	@WebMethod
 	public double CO2ppm() {
@@ -26,6 +29,11 @@ public class Device124 {
 	@WebMethod
 	public void executeAC() {
 		acService.executeAC();
+	}
+	
+	@WebMethod
+	public double readTemperature() {
+		return temperatureService.readTemperature();
 	}
 
 	public static void main(String[] args) {
