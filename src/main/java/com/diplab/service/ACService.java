@@ -6,64 +6,22 @@ public interface ACService {
 
 	@WebMethod
 	void executeAC();
-	
+
 	@WebMethod
-	void ACstateAgain();
-	
+	/**
+	 * 
+	 * @param temp between 20~30, other for cooler
+	 */
+	void setACtemperature(int temp);
+
 	@WebMethod
-	void setACtemperature20();
-	
+	/**
+	 * 
+	 * @param hour 2,3,4,5,8,10,12, other for forever
+	 */
+	void setACtime(int hour);
+
 	@WebMethod
-	void setACtemperature21();
-	
-	@WebMethod
-	void setACtemperature22();
-	
-	@WebMethod
-	void setACtemperature23();
-	
-	@WebMethod
-	void setACtemperature24();
-	
-	@WebMethod
-	void setACtemperature25();
-	
-	@WebMethod
-	void setACtemperature26();
-	
-	@WebMethod
-	void setACtemperature27();
-	
-	@WebMethod
-	void setACtemperature28();
-	
-	@WebMethod
-	void setACtemperature29();
-	
-	@WebMethod
-	void setACtemperature30();
-	
-	@WebMethod
-	void setACtime2();
-	
-	@WebMethod
-	void setACtime3();
-	
-	@WebMethod
-	void setACtime4();
-	
-	@WebMethod
-	void setACtime5();
-	
-	@WebMethod
-	void setACtime8();
-	
-	@WebMethod
-	void setACtime10();
-	
-	@WebMethod
-	void setACtime12();
-	
-	@WebMethod
-	void setACtimeclear();
+	void blast();
+
 }
